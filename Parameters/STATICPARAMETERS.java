@@ -1,4 +1,4 @@
-package Chess.Paramenter;
+package Chess.Parameters;
 //CreateTime: 2022-03-15 7:52 p.m.
 
 import Chess.ChessBoard.ChessBoardComponent;
@@ -6,7 +6,7 @@ import Chess.ChessBoard.ChessBoardPanel;
 import Chess.ChessBoard.MomeryBoard2D;
 import Chess.ChessPiecesPackage.*;
 import Chess.ChessTimer.ChessTimerComponent;
-import Chess.Listener.ChessPiecesMouseListener;
+import Chess.Listeners.ChessPiecesMouseListener;
 import Chess.PawnChangeComponent.ComponentPanel;
 import Chess.PiecesParentAndInterface.Pieces;
 import Chess.PiecesParentAndInterface.PiecesComponent;
@@ -63,7 +63,7 @@ public class STATICPARAMETERS {
         }return false;
     }public static void Change(){
         if(STATICPARAMETERS.PawnChangeTo != null){
-            if (CONTANTPARAMETERS.ChooseWhite){
+            if (CONSTANTPARAMETERS.ChooseWhite){
                 if (STATICPARAMETERS.ColorStatus == 1){
                     STATICPARAMETERS.downtimer.start();
                 }else{
@@ -109,7 +109,7 @@ public class STATICPARAMETERS {
 
     static {
         try {
-            audioClip = Applet.newAudioClip(new File("C:\\Programming\\Java files\\JavaIntellij\\src\\Chess\\ChessSuond.wav").toURL());
+            audioClip = Applet.newAudioClip(new File("C:\\Programming\\Java files\\JavaIntellij\\src\\Chess\\ChessSound.wav").toURL());
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
@@ -132,7 +132,7 @@ public class STATICPARAMETERS {
         }int i1;
         int i2;
         if (STATICPARAMETERS.ColorStatus == 0){
-            if (CONTANTPARAMETERS.ChooseWhite){
+            if (CONSTANTPARAMETERS.ChooseWhite){
                 i1 = 0;
                 i2 = 16;
             }else{
@@ -140,7 +140,7 @@ public class STATICPARAMETERS {
                 i2 = 32;
             }
         }else{
-            if (!(CONTANTPARAMETERS.ChooseWhite)){
+            if (!(CONSTANTPARAMETERS.ChooseWhite)){
                 i1 = 0;
                 i2 = 16;
             }else{
@@ -174,7 +174,7 @@ public class STATICPARAMETERS {
         Pieces pieces;
         if (STATICPARAMETERS.ColorStatus == 0) {
             pieces = STATICPARAMETERS.chessPiecesList.get(STATICPARAMETERS.BlackKingID);
-            if (CONTANTPARAMETERS.ChooseWhite) {
+            if (CONSTANTPARAMETERS.ChooseWhite) {
                 i1 = 16;
                 i2 = 32;
             } else {
@@ -183,7 +183,7 @@ public class STATICPARAMETERS {
             }
         } else {
             pieces = STATICPARAMETERS.chessPiecesList.get(STATICPARAMETERS.WhiteKingID);
-            if (!CONTANTPARAMETERS.ChooseWhite) {
+            if (!CONSTANTPARAMETERS.ChooseWhite) {
                 i1 = 16;
                 i2 = 32;
             }else {

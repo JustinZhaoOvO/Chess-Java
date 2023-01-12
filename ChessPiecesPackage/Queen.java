@@ -1,8 +1,8 @@
 package Chess.ChessPiecesPackage;
 //CreateTime: 2022-03-11 5:03 p.m.
 
-import Chess.Paramenter.CONTANTPARAMETERS;
-import Chess.Paramenter.STATICPARAMETERS;
+import Chess.Parameters.CONSTANTPARAMETERS;
+import Chess.Parameters.STATICPARAMETERS;
 import Chess.PiecesParentAndInterface.Pieces;
 import Chess.PiecesParentAndInterface.PiecesComponent;
 
@@ -172,7 +172,7 @@ public class Queen extends Pieces{
 
         public QueenComponent(Pieces pieces){
             this.myPiece = pieces;
-            if (this.getComponentColor() == CONTANTPARAMETERS.Black){
+            if (this.getComponentColor() == CONSTANTPARAMETERS.Black){
                 pieceImage = new ImageIcon("C:\\Programming\\Java files\\JavaIntellij\\src\\Chess\\ChessPiecesElements\\QueenBlack.png").getImage();
             }else{
                 pieceImage = new ImageIcon("C:\\Programming\\Java files\\JavaIntellij\\src\\Chess\\ChessPiecesElements\\QueenWhite.png").getImage();

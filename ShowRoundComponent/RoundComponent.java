@@ -3,7 +3,7 @@ package Chess.ShowRoundComponent;
 
 import Chess.ChessTimer.ChessTimerComponent;
 import Chess.ChessTimer.ChessTimerMouseListener;
-import Chess.Paramenter.STATICPARAMETERS;
+import Chess.Parameters.STATICPARAMETERS;
 
 import javax.swing.*;
 import java.awt.*;

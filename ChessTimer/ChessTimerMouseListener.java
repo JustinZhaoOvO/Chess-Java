@@ -1,8 +1,8 @@
 package Chess.ChessTimer;
 //CreateTime: 2022-04-03 4:39 p.m.
 
-import Chess.Listener.MouseListenerAdapter;
-import Chess.Paramenter.STATICPARAMETERS;
+import Chess.Listeners.MouseListenerAdapter;
+import Chess.Parameters.STATICPARAMETERS;
 
 import java.awt.event.MouseEvent;
 

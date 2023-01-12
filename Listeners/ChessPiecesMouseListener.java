@@ -1,14 +1,14 @@
-package Chess.Listener;
+package Chess.Listeners;
 //CreateTime: 2022-03-15 6:34 p.m.
 
-import Chess.Paramenter.CONTANTPARAMETERS;
-import Chess.Paramenter.STATICPARAMETERS;
+import Chess.Parameters.CONSTANTPARAMETERS;
+import Chess.Parameters.STATICPARAMETERS;
 import Chess.PiecesParentAndInterface.PiecesComponent;
 
 import java.awt.event.MouseEvent;
 
-import static Chess.Paramenter.STATICPARAMETERS.clicked;
-import static Chess.Paramenter.STATICPARAMETERS.clickedPieceCanMove;
+import static Chess.Parameters.STATICPARAMETERS.clicked;
+import static Chess.Parameters.STATICPARAMETERS.clickedPieceCanMove;
 
 public class ChessPiecesMouseListener extends MouseListenerAdapter {
 
@@ -23,7 +23,7 @@ public class ChessPiecesMouseListener extends MouseListenerAdapter {
             if (component.getComponentColor() == STATICPARAMETERS.ColorStatus) {
                 if (clicked == null) {
                     if (!STATICPARAMETERS.startTimer){
-                        if (CONTANTPARAMETERS.ChooseWhite){
+                        if (CONSTANTPARAMETERS.ChooseWhite){
                             if (STATICPARAMETERS.ColorStatus == 1){
                                 STATICPARAMETERS.downtimer.start();
                             }else{
@@ -58,7 +58,7 @@ public class ChessPiecesMouseListener extends MouseListenerAdapter {
                     int[] ints = new int[]{component.getComcoordinate()[0], component.getComcoordinate()[1]};
                     STATICPARAMETERS.ChessPiece2DList.updateboard(clicked.getMyPiece().coordinate, ints);
                     STATICPARAMETERS.ColorStatus = STATICPARAMETERS.ColorStatus == 0 ? 1 : 0;
-                    if (CONTANTPARAMETERS.ChooseWhite){
+                    if (CONSTANTPARAMETERS.ChooseWhite){
                         if (STATICPARAMETERS.ColorStatus == 1){
                             STATICPARAMETERS.uptimer.stop();
                             STATICPARAMETERS.downtimer.start();

@@ -1,8 +1,8 @@
 package Chess.PiecesParentAndInterface;
 //CreateTime: 2022-03-15 11:01 p.m.
 
-import Chess.Paramenter.CONTANTPARAMETERS;
-import Chess.Paramenter.STATICPARAMETERS;
+import Chess.Parameters.CONSTANTPARAMETERS;
+import Chess.Parameters.STATICPARAMETERS;
 
 import javax.swing.*;
 import java.awt.*;
@@ -55,7 +55,7 @@ public class PiecesComponent extends JPanel {
         g.fillRect(0, 0, getWidth(), getHeight());
         g.drawImage(this.getPieceImage(), 0,0,this.getWidth(),getHeight(),null);
         if (STATICPARAMETERS.UnderMouseCursor == this){
-            g.setColor(CONTANTPARAMETERS.Cyan);
+            g.setColor(CONSTANTPARAMETERS.Cyan);
             for (int i = 0; i < this.getWidth() / 6; i+=2) {
                 g.drawRect(i,i,this.getWidth() - i*2,getHeight() - i*2);
             }
@@ -66,24 +66,24 @@ public class PiecesComponent extends JPanel {
         this.setBounds(getMyPiece().coordinate[0] * this.getWidth(),getMyPiece().coordinate[1] * this.getWidth(),this.getWidth(),getHeight());
         if (STATICPARAMETERS.clicked != null){
             if(STATICPARAMETERS.clicked == this){
-                this.setCurrentColor(CONTANTPARAMETERS.LightYellow);
+                this.setCurrentColor(CONSTANTPARAMETERS.LightYellow);
             }else{
                 if(STATICPARAMETERS.IsContains(STATICPARAMETERS.clickedPieceCanMove,getMyPiece().coordinate)){
 
-                    this.setCurrentColor(CONTANTPARAMETERS.Red);
+                    this.setCurrentColor(CONSTANTPARAMETERS.Red);
                 }else {
                     if (this.getMyPiece().coordinate[0] % 2 != this.getMyPiece().coordinate[1] % 2) {
-                        this.setCurrentColor(CONTANTPARAMETERS.DarkGreen);
+                        this.setCurrentColor(CONSTANTPARAMETERS.DarkGreen);
                     } else {
-                        this.setCurrentColor(CONTANTPARAMETERS.YelloWhite);
+                        this.setCurrentColor(CONSTANTPARAMETERS.YelloWhite);
                     }
                 }
             }
         }else {
             if (this.getMyPiece().coordinate[0] % 2 != this.getMyPiece().coordinate[1] % 2) {
-                this.setCurrentColor(CONTANTPARAMETERS.DarkGreen);
+                this.setCurrentColor(CONSTANTPARAMETERS.DarkGreen);
             } else {
-                this.setCurrentColor(CONTANTPARAMETERS.YelloWhite);
+                this.setCurrentColor(CONSTANTPARAMETERS.YelloWhite);
             }
         }
     }

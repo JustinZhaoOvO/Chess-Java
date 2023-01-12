@@ -1,8 +1,8 @@
-package Chess.Listener;
+package Chess.Listeners;
 //CreateTime: 2022-03-17 12:53 p.m.
 
 
-import Chess.Paramenter.STATICPARAMETERS;
+import Chess.Parameters.STATICPARAMETERS;
 import Chess.PawnChangeComponent.ChangeToBishop;
 import Chess.PawnChangeComponent.ChangeToQueen;
 import Chess.PawnChangeComponent.ChangeToRook;

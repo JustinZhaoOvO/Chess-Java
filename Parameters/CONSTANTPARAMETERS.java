@@ -1,4 +1,4 @@
-package Chess.Paramenter;
+package Chess.Parameters;
 //CreateTime: 2022-03-15 2:54 p.m.
 
 
@@ -6,7 +6,7 @@ import Chess.RestartOrExitComponent.RestartExitComponent;
 
 import java.awt.*;
 
-public class CONTANTPARAMETERS {
+public class CONSTANTPARAMETERS {
     //whether to choose white
     public static boolean ChooseWhite = false;
     //two party has 32 pieces

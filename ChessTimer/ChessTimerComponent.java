@@ -1,7 +1,7 @@
 package Chess.ChessTimer;
 //CreateTime: 2022-04-02 7:05 p.m.
 
-import Chess.Paramenter.STATICPARAMETERS;
+import Chess.Parameters.STATICPARAMETERS;
 
 import javax.swing.*;
 import java.awt.*;

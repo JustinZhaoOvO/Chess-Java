@@ -1,8 +1,8 @@
 package Chess.ChessPiecesPackage;
 //CreateTime: 2022-03-11 5:13 p.m.
 
-import Chess.Paramenter.CONTANTPARAMETERS;
-import Chess.Paramenter.STATICPARAMETERS;
+import Chess.Parameters.CONSTANTPARAMETERS;
+import Chess.Parameters.STATICPARAMETERS;
 import Chess.PiecesParentAndInterface.Pieces;
 import Chess.PiecesParentAndInterface.PiecesComponent;
 
@@ -117,7 +117,7 @@ public class Knight extends Pieces{
 
         public KnightComponent(Pieces pieces){
             this.myPiece = pieces;
-            if (this.getComponentColor() == CONTANTPARAMETERS.Black){
+            if (this.getComponentColor() == CONSTANTPARAMETERS.Black){
                 pieceImage = new ImageIcon("C:\\Programming\\Java files\\JavaIntellij\\src\\Chess\\ChessPiecesElements\\KnightBlack.png").getImage();
             }else{
                 pieceImage = new ImageIcon("C:\\Programming\\Java files\\JavaIntellij\\src\\Chess\\ChessPiecesElements\\KnightWhite.png").getImage();
@@ -142,7 +142,7 @@ public class Knight extends Pieces{
             g.fillRect(0, 0, getWidth(), getHeight());
             g.drawImage(this.getPieceImage(), (this.getWidth() - (this.getWidth() * imageX / imageY)) / 2, 0, this.getWidth() * imageX / imageY, getHeight(), null);
             if (STATICPARAMETERS.UnderMouseCursor == this) {
-                g.setColor(CONTANTPARAMETERS.Cyan);
+                g.setColor(CONSTANTPARAMETERS.Cyan);
                 for (int i = 0; i < this.getWidth() / 6; i += 2) {
                     g.drawRect(i, i, this.getWidth() - i * 2, getHeight() - i * 2);
                 }

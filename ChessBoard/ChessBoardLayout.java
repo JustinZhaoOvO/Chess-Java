@@ -2,8 +2,8 @@ package Chess.ChessBoard;
 //CreateTime: 2022-03-13 11:51 p.m.
 
 import Chess.ChessPiecesPackage.*;
-import Chess.Paramenter.CONTANTPARAMETERS;
-import Chess.Paramenter.STATICPARAMETERS;
+import Chess.Parameters.CONSTANTPARAMETERS;
+import Chess.Parameters.STATICPARAMETERS;
 import Chess.PiecesParentAndInterface.Pieces;
 
 import java.awt.*;
@@ -57,6 +57,6 @@ public class ChessBoardLayout extends LayoutAdapter {
             STATICPARAMETERS.changeComponent.setBounds(len * 2,len * 2,len * 4,len * 4);
         }
         STATICPARAMETERS.ROUND_COMPONENT.setBounds(8 * len,0,Roundswidth,height);
-        CONTANTPARAMETERS.RESTART_EXIT_COMPONENT.setBounds(0,height/4,8 * len,height/2);
+        CONSTANTPARAMETERS.RESTART_EXIT_COMPONENT.setBounds(0,height/4,8 * len,height/2);
     }
 }

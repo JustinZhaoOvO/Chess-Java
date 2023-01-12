@@ -1,8 +1,8 @@
 package Chess.ChessPiecesPackage;
 //CreateTime: 2022-03-11 5:13 p.m.
 
-import Chess.Paramenter.CONTANTPARAMETERS;
-import Chess.Paramenter.STATICPARAMETERS;
+import Chess.Parameters.CONSTANTPARAMETERS;
+import Chess.Parameters.STATICPARAMETERS;
 import Chess.PawnChangeComponent.ComponentPanel;
 import Chess.PiecesParentAndInterface.Pieces;
 import Chess.PiecesParentAndInterface.PiecesComponent;
@@ -33,7 +33,7 @@ public class Pawn extends Pieces{
     public ArrayList<int[]> getAllCanMoveCoordinates() {
         int x = this.coordinate[0];
         int y = this.coordinate[1];
-        int direction = CONTANTPARAMETERS.ChooseWhite ^ (this.color == 1)?1:-1;
+        int direction = CONSTANTPARAMETERS.ChooseWhite ^ (this.color == 1)?1:-1;
         Pieces[][] board = STATICPARAMETERS.ChessPiece2DList.board;
         ArrayList<int[]> ints = new ArrayList<>(5);
         if (direction > 0? y +  direction <= 7 : y +  direction >= 0) {
@@ -57,7 +57,7 @@ public class Pawn extends Pieces{
     public ArrayList<int[]> getAllCanMoveCoordinatesCheck() {
         int x = this.coordinate[0];
         int y = this.coordinate[1];
-        int direction = CONTANTPARAMETERS.ChooseWhite ^ (this.color == 1)?1:-1;
+        int direction = CONSTANTPARAMETERS.ChooseWhite ^ (this.color == 1)?1:-1;
         Pieces[][] board = STATICPARAMETERS.ChessPiece2DList.board;
         ArrayList<int[]> ints = new ArrayList<>(5);
         if (direction > 0? y +  direction <= 7 : y +  direction >= 0) {
@@ -120,7 +120,7 @@ public class Pawn extends Pieces{
             STATICPARAMETERS.blackPawnMove1Step = null;
             STATICPARAMETERS.blackPawnMove2Step = null;
         }
-        if (coordinate[1] == ((CONTANTPARAMETERS.ChooseWhite)?((this.color == 1)?0:7):(this.color == 1)?7:0)){
+        if (coordinate[1] == ((CONSTANTPARAMETERS.ChooseWhite)?((this.color == 1)?0:7):(this.color == 1)?7:0)){
             STATICPARAMETERS.uptimer.stop();
             STATICPARAMETERS.downtimer.stop();
             STATICPARAMETERS.Changing = true;
@@ -190,7 +190,7 @@ public class Pawn extends Pieces{
 
         public PawnComponent(Pieces pieces){
             this.myPiece = pieces;
-            if (this.getComponentColor() == CONTANTPARAMETERS.Black){
+            if (this.getComponentColor() == CONSTANTPARAMETERS.Black){
                 pieceImage = new ImageIcon("C:\\Programming\\Java files\\JavaIntellij\\src\\Chess\\ChessPiecesElements\\PawnBlack.png").getImage();
             }else{
                 pieceImage = new ImageIcon("C:\\Programming\\Java files\\JavaIntellij\\src\\Chess\\ChessPiecesElements\\PawnWhite.png").getImage();

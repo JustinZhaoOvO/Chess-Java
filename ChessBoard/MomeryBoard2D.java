@@ -2,8 +2,8 @@ package Chess.ChessBoard;
 //CreateTime: 2022-03-11 5:36 p.m.
 
 import Chess.ChessPiecesPackage.*;
-import Chess.Paramenter.CONTANTPARAMETERS;
-import Chess.Paramenter.STATICPARAMETERS;
+import Chess.Parameters.CONSTANTPARAMETERS;
+import Chess.Parameters.STATICPARAMETERS;
 import Chess.PiecesParentAndInterface.Pieces;
 
 import java.util.ArrayList;
@@ -18,19 +18,19 @@ public class MomeryBoard2D {
 
     public MomeryBoard2D(ArrayList<Pieces> piecesArrayList, boolean white){ // boolean white : choose white or not white(black)
         this.piecesArrayList = piecesArrayList;
-        this.board = new Pieces[CONTANTPARAMETERS.ChessBoardLength][CONTANTPARAMETERS.ChessBoardLength];
-        final int[] needTofill = new int[]{CONTANTPARAMETERS.oppositeKingRow,CONTANTPARAMETERS.oppositePawnRow,CONTANTPARAMETERS.myKingRow,CONTANTPARAMETERS.myPawnRow};
+        this.board = new Pieces[CONSTANTPARAMETERS.ChessBoardLength][CONSTANTPARAMETERS.ChessBoardLength];
+        final int[] needTofill = new int[]{CONSTANTPARAMETERS.oppositeKingRow, CONSTANTPARAMETERS.oppositePawnRow, CONSTANTPARAMETERS.myKingRow, CONSTANTPARAMETERS.myPawnRow};
         for (int i : needTofill) {
-           if (i == CONTANTPARAMETERS.oppositePawnRow || i == CONTANTPARAMETERS.myPawnRow ){
-               color = ((i == CONTANTPARAMETERS.oppositePawnRow) ^ white)?CONTANTPARAMETERS.White:CONTANTPARAMETERS.Black;
-               for (int i1 = 0; i1 < CONTANTPARAMETERS.ChessBoardLength; i1++) {
+           if (i == CONSTANTPARAMETERS.oppositePawnRow || i == CONSTANTPARAMETERS.myPawnRow ){
+               color = ((i == CONSTANTPARAMETERS.oppositePawnRow) ^ white)? CONSTANTPARAMETERS.White: CONSTANTPARAMETERS.Black;
+               for (int i1 = 0; i1 < CONSTANTPARAMETERS.ChessBoardLength; i1++) {
                    nowPieces = new Pawn(color,ID++,new int[]{i1,i});
                    board[i][i1] = nowPieces;
                    piecesArrayList.add(nowPieces);
                }
            }else{
-               color = ((i == CONTANTPARAMETERS.oppositeKingRow) ^ white)?CONTANTPARAMETERS.White:CONTANTPARAMETERS.Black;
-               for (int i1 = 0; i1 < CONTANTPARAMETERS.ChessBoardLength; i1++) {
+               color = ((i == CONSTANTPARAMETERS.oppositeKingRow) ^ white)? CONSTANTPARAMETERS.White: CONSTANTPARAMETERS.Black;
+               for (int i1 = 0; i1 < CONSTANTPARAMETERS.ChessBoardLength; i1++) {
                    if (i1 == 0 || i1 == 7){
                        nowPieces = new Rook(color,ID++,new int[]{i1,i});
                        board[i][i1] = nowPieces;

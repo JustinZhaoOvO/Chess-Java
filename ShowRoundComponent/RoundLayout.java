@@ -2,7 +2,7 @@ package Chess.ShowRoundComponent;
 //CreateTime: 2022-04-02 9:18 p.m.
 
 import Chess.ChessBoard.LayoutAdapter;
-import Chess.Paramenter.STATICPARAMETERS;
+import Chess.Parameters.STATICPARAMETERS;
 
 import java.awt.*;
 

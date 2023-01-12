@@ -1,8 +1,8 @@
 package Chess.ChessPiecesPackage;
 //CreateTime: 2022-03-11 5:12 p.m.
 
-import Chess.Paramenter.CONTANTPARAMETERS;
-import Chess.Paramenter.STATICPARAMETERS;
+import Chess.Parameters.CONSTANTPARAMETERS;
+import Chess.Parameters.STATICPARAMETERS;
 import Chess.PiecesParentAndInterface.Pieces;
 import Chess.PiecesParentAndInterface.PiecesComponent;
 
@@ -144,7 +144,7 @@ public class Rook extends Pieces{
 
         public RookComponent(Pieces pieces){
             this.myPiece = pieces;
-            if (this.getComponentColor() == CONTANTPARAMETERS.Black){
+            if (this.getComponentColor() == CONSTANTPARAMETERS.Black){
                 pieceImage = new ImageIcon("C:\\Programming\\Java files\\JavaIntellij\\src\\Chess\\ChessPiecesElements\\RookBlack.png").getImage();
             }else{
                 pieceImage = new ImageIcon("C:\\Programming\\Java files\\JavaIntellij\\src\\Chess\\ChessPiecesElements\\RookWhite.png").getImage();

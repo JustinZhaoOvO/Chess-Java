@@ -1,8 +1,8 @@
 package Chess.PawnChangeComponent;
 //CreateTime: 2022-03-17 11:22 a.m.
 
-import Chess.Listener.ChangeComponentMouseListener;
-import Chess.Paramenter.CONTANTPARAMETERS;
+import Chess.Listeners.ChangeComponentMouseListener;
+import Chess.Parameters.CONSTANTPARAMETERS;
 
 import javax.swing.*;
 import java.awt.*;
@@ -26,7 +26,7 @@ public class ComponentPanel extends JPanel {
     protected void paintComponent(Graphics g) {
 
         super.paintComponent(g);
-        g.setColor(CONTANTPARAMETERS.Red);
+        g.setColor(CONSTANTPARAMETERS.Red);
         g.fillRect(0,0,this.getWidth(),this.getHeight());
     }
 }

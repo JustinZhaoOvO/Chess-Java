@@ -5,6 +5,6 @@ package Chess.MainProgram;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-            new Chess.MainProgram.MainMethod(10,54);
+            new Chess.MainProgram.MainMethod(30);
     }
 }

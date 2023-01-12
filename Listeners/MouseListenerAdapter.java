@@ -1,7 +1,7 @@
-package Chess.Listener;
+package Chess.Listeners;
 //CreateTime: 2022-03-17 3:29 p.m.
 
-import Chess.Paramenter.STATICPARAMETERS;
+import Chess.Parameters.STATICPARAMETERS;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;

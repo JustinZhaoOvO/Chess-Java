@@ -5,10 +5,10 @@ import Chess.ChessBoard.ChessBoardComponent;
 import Chess.ChessBoard.ChessBoardLayout;
 import Chess.ChessBoard.ChessBoardPanel;
 import Chess.ChessBoard.MomeryBoard2D;
-import Chess.Listener.ChessBoardMouseListener;
-import Chess.Listener.ChessPiecesMouseListener;
-import Chess.Paramenter.CONTANTPARAMETERS;
-import Chess.Paramenter.STATICPARAMETERS;
+import Chess.Listeners.ChessBoardMouseListener;
+import Chess.Listeners.ChessPiecesMouseListener;
+import Chess.Parameters.CONSTANTPARAMETERS;
+import Chess.Parameters.STATICPARAMETERS;
 import Chess.PiecesParentAndInterface.PiecesComponent;
 import Chess.ShowRoundComponent.RoundComponent;
 
@@ -52,15 +52,15 @@ public class MainMethod extends JFrame {
         long downtime = (downminute * 60L + downsecond) * 1000;
         //set Window args
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setLocation(CONTANTPARAMETERS.ScreenOriginalLocationX,CONTANTPARAMETERS.ScreenOriginalLocationY);
-        this.setSize(CONTANTPARAMETERS.ScreenOriginalSizeX,CONTANTPARAMETERS.ScreenOriginalSizeY);
-        this.setTitle(CONTANTPARAMETERS.WindowName);
+        this.setLocation(CONSTANTPARAMETERS.ScreenOriginalLocationX, CONSTANTPARAMETERS.ScreenOriginalLocationY);
+        this.setSize(CONSTANTPARAMETERS.ScreenOriginalSizeX, CONSTANTPARAMETERS.ScreenOriginalSizeY);
+        this.setTitle(CONSTANTPARAMETERS.WindowName);
         STATICPARAMETERS.MainWindow = this;
         while (true) {
             //initialize Static paraments
             STATICPARAMETERS.ROUND_COMPONENT = new RoundComponent(uptime,downtime);
-            STATICPARAMETERS.chessBoardComponents = new ChessBoardComponent[CONTANTPARAMETERS.ChessBoardLength][CONTANTPARAMETERS.ChessBoardLength];
-            STATICPARAMETERS.chessPiecesList = new ArrayList<>(CONTANTPARAMETERS.TotalChessPieces);
+            STATICPARAMETERS.chessBoardComponents = new ChessBoardComponent[CONSTANTPARAMETERS.ChessBoardLength][CONSTANTPARAMETERS.ChessBoardLength];
+            STATICPARAMETERS.chessPiecesList = new ArrayList<>(CONSTANTPARAMETERS.TotalChessPieces);
             STATICPARAMETERS.ColorStatus = 1;
             STATICPARAMETERS.clicked = null;
             STATICPARAMETERS.Gaming = true;
@@ -76,7 +76,7 @@ public class MainMethod extends JFrame {
         MomeryBoard2D : Create a 2D Chess Board to save Pieces Location in the Chess board.
          */
             //create 2D chessBoard, WhitePieces list, BlackPieces list, allPieces list
-            STATICPARAMETERS.ChessPiece2DList = new MomeryBoard2D(STATICPARAMETERS.chessPiecesList, CONTANTPARAMETERS.ChooseWhite);
+            STATICPARAMETERS.ChessPiece2DList = new MomeryBoard2D(STATICPARAMETERS.chessPiecesList, CONSTANTPARAMETERS.ChooseWhite);
             PiecesComponent currentComponent;
             MouseListener mouseListener = new ChessPiecesMouseListener();
 
@@ -86,14 +86,14 @@ public class MainMethod extends JFrame {
             STATICPARAMETERS.Root = chessBoardPanel;
 
             //add component
-            chessBoardPanel.add(CONTANTPARAMETERS.RESTART_EXIT_COMPONENT);
+            chessBoardPanel.add(CONSTANTPARAMETERS.RESTART_EXIT_COMPONENT);
             for (int i = 0; i < STATICPARAMETERS.chessPiecesList.size(); i++) {
                 currentComponent = (PiecesComponent) STATICPARAMETERS.chessPiecesList.get(i).getComponent();
                 currentComponent.addMouseListener(mouseListener);
                 chessBoardPanel.add(currentComponent);
             }
-            for (int i = 0; i < CONTANTPARAMETERS.ChessBoardLength; i++) {
-                for (int i1 = 0; i1 < CONTANTPARAMETERS.ChessBoardLength; i1++) {
+            for (int i = 0; i < CONSTANTPARAMETERS.ChessBoardLength; i++) {
+                for (int i1 = 0; i1 < CONSTANTPARAMETERS.ChessBoardLength; i1++) {
                     ChessBoardComponent chessBoardComponent = new ChessBoardComponent(i1, i);
                     chessBoardComponent.addMouseListener(new ChessBoardMouseListener());
                     chessBoardPanel.add(chessBoardComponent);
@@ -118,7 +118,7 @@ public class MainMethod extends JFrame {
                 STATICPARAMETERS.Change();
             }STATICPARAMETERS.downtimer.stop();
             STATICPARAMETERS.uptimer.stop();
-            CONTANTPARAMETERS.RESTART_EXIT_COMPONENT.setVisible(true);
+            CONSTANTPARAMETERS.RESTART_EXIT_COMPONENT.setVisible(true);
 //            chessBoardPanel.updateUI();
             while (STATICPARAMETERS.NoneReStartExit == 0) {
                 repaint();
